@@ -162,8 +162,12 @@ class NotificationServiceTest {
         List<NotificationRecipientAddressesDto> listdto = new ArrayList<>();
         NotificationRecipientAddressesDto dto = new NotificationRecipientAddressesDto();
         dto.setDenomination("sig rossi");
-        dto.setDigitalAddress(new AddressDto());
-        dto.getDigitalAddress().setValue("rossi@test.it");
+        dto.setDigitalAddress(new DigitalAddress());
+        dto.getDigitalAddress()
+            .setAddress("rossi@test.it");
+        dto.getDigitalAddress()
+            .setType("EVINOTICE");
+
         dto.setPhysicalAddress(new AnalogDomicile());
         listdto.add(dto);
 

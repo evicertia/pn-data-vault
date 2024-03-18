@@ -55,7 +55,7 @@ public class NotificationEntity {
     @Getter(onMethod=@__({@DynamoDbSortKey, @DynamoDbAttribute(COL_SK)}))  private String recipientIndex;
 
     @ToString.Exclude @Getter(onMethod=@__({@DynamoDbAttribute(COL_DENOMINATION)}))  private String denomination;
-    @ToString.Exclude @Getter(onMethod=@__({@DynamoDbAttribute(COL_DIGITAL_ADDRESS)})) private String digitalAddress;
+    @ToString.Exclude @Getter(onMethod=@__({@DynamoDbAttribute(COL_DIGITAL_ADDRESS)})) private DigitalAddress digitalAddress;
     @ToString.Exclude @Getter(onMethod=@__({@DynamoDbAttribute(COL_PHYSICAL_ADDRESS)})) private PhysicalAddress physicalAddress;
     @ToString.Exclude @Getter(onMethod=@__({@DynamoDbAttribute(COL_NORMALIZED_ADDRESS)})) private Boolean normalizedAddress;
 }

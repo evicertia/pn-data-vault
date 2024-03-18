@@ -644,7 +644,7 @@ components:
           x-field-extra-annotation: "@lombok.ToString.Exclude" # NO EXTERNAL
           example: Nome Dott. Cognome
         digitalAddress:
-          $ref: '#/components/schemas/AddressDto'
+          $ref: '#/components/schemas/DigitalAddressDto'
         physicalAddress:
           $ref: '#/components/schemas/AnalogDomicile'
 
@@ -685,6 +685,22 @@ components:
           x-field-extra-annotation: "@lombok.ToString.Exclude" # NO EXTERNAL
           example: 'it'
 
+    DigitalAddressDto:
+      description: Indirizzo di invio della notifica
+      required:
+        - value
+        - type
+      type: object
+      properties:
+        type:
+          x-field-extra-annotation: '@lombok.ToString.Exclude'
+          type: string
+          description: tipo di indirizzo PEC, REM, SERCQ, SMS, EMAIL, APPIO ...
+        value:
+          x-field-extra-annotation: '@lombok.ToString.Exclude'
+          type: string
+          description: account@domain
+
     ListOfConfidentialTimelineElementId:
       type: array
       items:
@@ -715,7 +731,7 @@ components:
           type: string
           x-field-extra-annotation: "@lombok.ToString.Exclude" # NO EXTERNAL
         digitalAddress:
-          $ref: '#/components/schemas/AddressDto'
+          $ref: '#/components/schemas/DigitalAddressDto'
         physicalAddress:
           $ref: '#/components/schemas/AnalogDomicile'
         newPhysicalAddress:

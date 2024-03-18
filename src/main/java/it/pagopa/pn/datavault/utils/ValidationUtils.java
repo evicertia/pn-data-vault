@@ -2,6 +2,7 @@ package it.pagopa.pn.datavault.utils;
 
 import it.pagopa.pn.datavault.generated.openapi.server.v1.dto.AddressDto;
 import it.pagopa.pn.datavault.generated.openapi.server.v1.dto.DenominationDto;
+import it.pagopa.pn.datavault.generated.openapi.server.v1.dto.DigitalAddressDto;
 import lombok.AccessLevel;
 import lombok.CustomLog;
 import lombok.NoArgsConstructor;
@@ -75,7 +76,7 @@ public class ValidationUtils {
         return checkString(denomination, DENOMINATION);
     }
 
-    public static boolean checkDigitalAddress(AddressDto digitalAddress) {
+    public static boolean checkDigitalAddress(DigitalAddressDto digitalAddress) {
         log.logChecking(DIGITAL_ADDRESS);
         if (digitalAddress != null && !StringUtils.hasText(digitalAddress.getValue())) {
             log.logCheckingOutcome(DIGITAL_ADDRESS, false, "Has no text");

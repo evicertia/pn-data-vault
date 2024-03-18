@@ -44,7 +44,7 @@ public class NotificationTimelineEntity {
 
     @ToString.Exclude @Getter(onMethod=@__({@DynamoDbAttribute(COL_TAXID)})) private String taxId;
     @ToString.Exclude @Getter(onMethod=@__({@DynamoDbAttribute(COL_DENOMINATION)})) private String denomination;
-    @ToString.Exclude @Getter(onMethod=@__({@DynamoDbAttribute(COL_DIGITAL_ADDRESS)})) private String digitalAddress;
+    @ToString.Exclude @Getter(onMethod=@__({@DynamoDbAttribute(COL_DIGITAL_ADDRESS)})) private DigitalAddress digitalAddress;
     @ToString.Exclude @Getter(onMethod=@__({@DynamoDbAttribute(COL_PHYSICAL_ADDRESS)})) private PhysicalAddress physicalAddress;
     @ToString.Exclude @Getter(onMethod=@__({@DynamoDbAttribute(COL_NEW_PHYSICAL_ADDRESS)})) private PhysicalAddress newPhysicalAddress;
 

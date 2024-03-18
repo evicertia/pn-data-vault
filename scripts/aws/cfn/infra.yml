@@ -706,7 +706,7 @@ Resources:
                     'Dimensions': [
                         {
                             'Name': 'Region',
-                            'Value': 'eu-south-1'
+                            'Value': 'us-east-1'
                         }
                     ],
                     'Value': quota['SentLast24Hours']
@@ -719,7 +719,7 @@ Resources:
                     'Dimensions': [
                         {
                             'Name': 'Region',
-                            'Value': 'eu-south-1'
+                            'Value': 'us-east-1'
                         }
                     ],
                     'Value': int(quota_percentage)
@@ -763,15 +763,15 @@ Resources:
                     "type": "metric",
                     "properties": {
                         "metrics": [
-                            [ "AWS/SES", "Reputation.BounceRate", { "region": "eu-south-1", "visible": false } ],
-                            [ ".", "Reputation.ComplaintRate", { "region": "eu-south-1", "visible": false } ],
-                            [ ".", "Send", { "region": "eu-south-1" } ],
-                            [ ".", "Delivery", { "region": "eu-south-1" } ],
-                            [ ".", "Bounce", { "region": "eu-south-1" } ]
+                            [ "AWS/SES", "Reputation.BounceRate", { "region": "us-east-1", "visible": false } ],
+                            [ ".", "Reputation.ComplaintRate", { "region": "us-east-1", "visible": false } ],
+                            [ ".", "Send", { "region": "us-east-1" } ],
+                            [ ".", "Delivery", { "region": "us-east-1" } ],
+                            [ ".", "Bounce", { "region": "us-east-1" } ]
                         ],
                         "view": "singleValue",
                         "stacked": false,
-                        "region": "eu-south-1",
+                        "region": "us-east-1",
                         "period": 86400,
                         "title": "SES_mails_sent_last24hours",
                         "stat": "Sum",
@@ -794,7 +794,7 @@ Resources:
                         ],
                         "view": "singleValue",
                         "stacked": true,
-                        "region": "eu-south-1",
+                        "region": "us-east-1",
                         "title": "SMS_sent_last24hours",
                         "yAxis": {
                             "left": {
@@ -814,7 +814,7 @@ Resources:
                     "type": "log",
                     "properties": {
                         "query": "SOURCE '${SesLambdaFunctionLogGroup}' | fields @timestamp, @message, @logStream, @log\n| filter @message like /eventType/\n| sort @timestamp desc\n| limit 20",
-                        "region": "eu-south-1",
+                        "region": "us-east-1",
                         "stacked": false,
                         "view": "table"
                     }
@@ -827,11 +827,11 @@ Resources:
                     "type": "metric",
                     "properties": {
                         "metrics": [
-                            [ "AWS/SNS", "SMSMonthToDateSpentUSD", { "region": "eu-south-1" } ]
+                            [ "AWS/SNS", "SMSMonthToDateSpentUSD", { "region": "us-east-1" } ]
                         ],
                         "view": "singleValue",
                         "stacked": false,
-                        "region": "eu-south-1",
+                        "region": "us-east-1",
                         "yAxis": {
                             "left": {
                                 "min": 0,
@@ -851,11 +851,11 @@ Resources:
                     "height": 4,
                     "properties": {
                         "metrics": [
-                            [ "AWS/SES", "MailUsageLast24HoursPercentage", "Region", "eu-south-1", { "id": "m1", "region": "eu-south-1" } ]
+                            [ "AWS/SES", "MailUsageLast24HoursPercentage", "Region", "us-east-1", { "id": "m1", "region": "us-east-1" } ]
                         ],
                         "sparkline": true,
                         "view": "singleValue",
-                        "region": "eu-south-1",
+                        "region": "us-east-1",
                         "stat": "Maximum",
                         "period": 300,
                         "stacked": true

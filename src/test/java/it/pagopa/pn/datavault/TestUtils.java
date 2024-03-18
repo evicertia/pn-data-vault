@@ -32,7 +32,12 @@ public abstract class TestUtils {
 
     public static NotificationEntity newNotification(Boolean normalized){
         NotificationEntity ne = new NotificationEntity("425e4567-e89b-12d3-a456-426655449631", "000", normalized);
-        ne.setDigitalAddress("mario.rossi@test.it");
+
+        DigitalAddress da = new DigitalAddress();
+        da.setAddress("mario.rossi@test.it");
+        da.setType("PEC");
+        ne.setDigitalAddress(da);
+
         PhysicalAddress pa = new PhysicalAddress();
         pa.setAddress("via casa sua");
         pa.setAt("via");
@@ -49,7 +54,12 @@ public abstract class TestUtils {
         NotificationTimelineEntity ne = new NotificationTimelineEntity("425e4567-e89b-12d3-a456-426655449631", "mario rossi");
         ne.setTaxId("MRDSME90R225451F");
         ne.setDenomination("Mario Rossi");
-        ne.setDigitalAddress("mario.rossi@test.it");
+
+        DigitalAddress da = new DigitalAddress();
+        da.setAddress("mario.rossi@test.it");
+        da.setType("PEC");
+        ne.setDigitalAddress(da);
+
         PhysicalAddress pa = new PhysicalAddress();
         pa.setAddress("via casa sua");
         pa.setAt("via");
